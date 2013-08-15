@@ -31,27 +31,4 @@ public class Ch4_2_3Activity extends Activity {
         output.setText(str);
     }
 }
-// StudentÃþ§O«Å§i
-class Student {
-   // Ãþ§OÅÜ¼Æ: ¦Ñ®v½s¸¹
-   public static int teacherNo = 500;
-   private static int count; // Ãþ§OÅÜ¼Æ: ¾Ç¥Í¤H¼Æ
-   private int id;        // ¦¨­û¸ê®Æ¾Ç¸¹
-   private double grade;  // ¦¨­û¸ê®Æ¦¨ÁZ
-   // «Øºc¤l: ¨Ï¥Î°Ñ¼Æ³]©wªì©l­È
-   public Student(int id, double grade) {
-      this.id = id;
-      this.grade = grade; // ³]©w¦¨ÁZ
-      count++;            // ¾Ç¥Í¤H¼Æ¥[¤@
-   }
-   // Ãþ§O¤èªk: ¶Ç¦^¾Ç¥Íªº­Ó¼Æ
-   public static int getStudentCount() { return count; }
-   // ¦¨­û¤èªk: ¨ú±o¾Ç¥Í¸ê®Æ
-   public String getStudentInfo() {
-	  // ¨ú±o¾Ç¥Í°ò¥»©M¦¨ÁZ¸ê®Æ
-      String str  = "[¾Ç¥Í¸ê®Æ]==============\n";
-      str += "¾Ç¥Í¾Ç¸¹ : " + id + "\n";
-      str += "¾Ç¥Í¦¨ÁZ : " + grade + "\n";
-      return str;
-   }
-}
+
