@@ -1,0 +1,57 @@
+package android_Examples.ch04.ch4_2_3;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+public class Ch4_2_3Activity extends Activity {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+    }
+    // Button¤¸¥óªº¨Æ¥ó³B²z
+    public void button1_Click(View view) {
+    	TextView output = (TextView) findViewById(R.id.txtOutput);
+    	String str = "";
+    	// «Å§iStudentÃþ§O«¬ºAªºÅÜ¼Æ¥B«Ø¥ßª«¥ó
+        Student std1 = new Student(1, 68.0);
+        Student std2 = new Student(2, 77.0);
+        str = "¦Ñ®v½s¸¹(Student): " + Student.teacherNo + "\n";
+        str += std1.getStudentInfo();  // ©I¥sª«¥óªº¹ê¨Ò¤èªk
+        str += std2.getStudentInfo();
+        // Åã¥Ü¾Ç¥Í¤H¼Æ
+        str += "Åã¥ÜÃþ§OÅÜ¼Æ­È=========";
+        str += "\n¾Ç¥Í¤H¼Æ(Student): " + Student.getStudentCount();
+        str += "\n§ó·s¦Ñ®v½s¸¹¬°501======";
+        Student.teacherNo = 501;  // §ó·s¦Ñ®v½s¸¹
+        // Åã¥Ü¦Ñ®v½s¸¹        
+        str += "\n¦Ñ®v½s¸¹(Student): " + Student.teacherNo;
+        output.setText(str);
+    }
+}
+// StudentÃþ§O«Å§i
+class Student {
+   // Ãþ§OÅÜ¼Æ: ¦Ñ®v½s¸¹
+   public static int teacherNo = 500;
+   private static int count; // Ãþ§OÅÜ¼Æ: ¾Ç¥Í¤H¼Æ
+   private int id;        // ¦¨­û¸ê®Æ¾Ç¸¹
+   private double grade;  // ¦¨­û¸ê®Æ¦¨ÁZ
+   // «Øºc¤l: ¨Ï¥Î°Ñ¼Æ³]©wªì©l­È
+   public Student(int id, double grade) {
+      this.id = id;
+      this.grade = grade; // ³]©w¦¨ÁZ
+      count++;            // ¾Ç¥Í¤H¼Æ¥[¤@
+   }
+   // Ãþ§O¤èªk: ¶Ç¦^¾Ç¥Íªº­Ó¼Æ
+   public static int getStudentCount() { return count; }
+   // ¦¨­û¤èªk: ¨ú±o¾Ç¥Í¸ê®Æ
+   public String getStudentInfo() {
+	  // ¨ú±o¾Ç¥Í°ò¥»©M¦¨ÁZ¸ê®Æ
+      String str  = "[¾Ç¥Í¸ê®Æ]==============\n";
+      str += "¾Ç¥Í¾Ç¸¹ : " + id + "\n";
+      str += "¾Ç¥Í¦¨ÁZ : " + grade + "\n";
+      return str;
+   }
+}
